@@ -32,7 +32,7 @@ object Precipitation {
 
     val sc = new SparkContext("local[*]", "Precipitation")
 
-    val rdd = sc.textFile("com.league55.spark/resources/1800.csv")
+    val rdd = sc.textFile("src/com.league55.spark/resources/1800.csv")
 
     val parsedData = rdd.map(parseLine)                             //(stationId, type, temp)
 

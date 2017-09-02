@@ -24,7 +24,7 @@ object PopularMovies {
     codec.onUnmappableCharacter(CodingErrorAction.REPLACE)
     codec.onMalformedInput(CodingErrorAction.REPLACE)
 
-    val dataSrc = Source.fromFile("com.league55.spark/resources/moviesData/u.item").getLines()
+    val dataSrc = Source.fromFile("src/com.league55.spark/resources/moviesData/u.item").getLines()
 
     var movieNames: Map[Int, String] = Map()
 
@@ -44,7 +44,7 @@ object PopularMovies {
     Logger.getLogger("org").setLevel(Level.ERROR)
 
     val sc = new SparkContext("local[1]", "PopularMovies")
-    val rdd = sc.textFile("com.league55.spark/resources/moviesData/u.data")
+    val rdd = sc.textFile("src/com.league55.spark/resources/moviesData/u.data")
 
     val ratedMovies = rdd.map(x => parseLines(x))
 

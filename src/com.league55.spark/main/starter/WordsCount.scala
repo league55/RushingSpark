@@ -9,7 +9,7 @@ object WordsCount {
     Logger.getLogger("org").setLevel(Level.ERROR)
 
     val sc = new SparkContext("local[1]", "WordCountBetter")
-    val rdd = sc.textFile("ScalaLearning/resources/book.txt")
+    val rdd = sc.textFile("src/com.league55.spark/resources/book.txt")
 
     val words = rdd.flatMap(_.split("\\W+"))
     val lowercaseWords = words.map(x => x.toLowerCase())

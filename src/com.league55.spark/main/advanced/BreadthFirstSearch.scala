@@ -30,7 +30,7 @@ object BreadthFirstSearch {
   val sc = new SparkContext("local[*]", "BFS")
 
   def getInitialData(sc: SparkContext): RDD[bfsNode] = {
-    val rdd = sc.textFile("com.league55.spark/resources/Marvel-graph.txt")
+    val rdd = sc.textFile("src/com.league55.spark/resources/Marvel-graph.txt")
     rdd.map(convertToBfsNode)
   }
 

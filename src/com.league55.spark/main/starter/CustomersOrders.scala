@@ -18,7 +18,7 @@ object CustomersOrders {
     Logger.getLogger("org").setLevel(Level.ERROR)
 
     val sc = new SparkContext("local[*]", "Customers")
-    val rdd = sc.textFile("com.league55.spark/resources/customer-orders.csv")
+    val rdd = sc.textFile("src/com.league55.spark/resources/customer-orders.csv")
 
     val rows = rdd.map(parseLine)
 

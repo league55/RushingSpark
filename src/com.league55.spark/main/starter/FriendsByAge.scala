@@ -21,7 +21,7 @@ object FriendsByAge {
 
     val sc = new SparkContext("local[*]", "FriendsByAgeOwn")
 
-    val lines = sc.textFile("ScalaLearning/resources/fakefriends.csv")
+    val lines = sc.textFile("src/com.league55.spark/resources/fakefriends.csv")
 
     val rdd = lines.map(parseLine)  //(33, 10)
 
